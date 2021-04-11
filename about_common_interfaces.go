@@ -18,6 +18,8 @@ func aboutCommonInterfaces() {
 		   $ open http://localhost:8080/pkg/bytes/
 		*/
 
+		str, _ := in.ReadString('\n')
+		out.WriteString(str)
 		assert(out.String() == "hello world") // get data from the io.Reader to the io.Writer
 	}
 
@@ -27,6 +29,8 @@ func aboutCommonInterfaces() {
 
 		out := new(bytes.Buffer)
 
+		str, _ := in.ReadString('o')
+		out.WriteString(str)
 		assert(out.String() == "hello") // duplicate only a portion of the io.Reader
 	}
 }
